@@ -13,7 +13,6 @@ let offset = 0;
 let allReviewText = [];
 let hasNext = false;
 do {
-  offset += 10;
   const url = baseURL + `&start=${offset}`;
   let page = await browser.page(url);
 
@@ -22,9 +21,11 @@ do {
   const document = htmlParser.parse(page);
   const reviews = document.querySelectorAll('p[class^="comment"]');
   const reviewText = reviews.map((n) => n.textContent);
-  hasNext = Boolean(document.querySelector("a.next-link"));
 
   allReviewText = allReviewText.concat(reviewText);
+
+  hasNext = Boolean(document.querySelector("a.next-link"));
+  offset += 10;
 } while (hasNext);
 
 logger.debug("got all reviews, tearing down");
