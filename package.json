@@ -1,0 +1,21 @@
+{
+  "name": "yelp-review-stats",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "node-html-parser": "^6.1.13",
+    "prettier": "^3.2.5",
+    "puppeteer": "^22.6.4"
+  }
+}
